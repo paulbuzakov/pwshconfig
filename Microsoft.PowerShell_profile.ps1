@@ -4,10 +4,10 @@ Set-Alias -Name v		-Value nvim
 Set-Alias -Name d		-Value dotnet
 
 if ($IsMacOS) {
-	& "$PSScriptRoot\macos.ps1"
+  Import-Module -Name $PSScriptRoot\macos.ps1
 }
 elseif ($IsWindows) {
-	Set-Alias -Name ll	-Value dir
+  Import-Module -Name $PSScriptRoot\windows.ps1
 }
 
 oh-my-posh init pwsh --config=$PSScriptRoot'/catppuccin_mocha.omp.json' | Invoke-Expression
